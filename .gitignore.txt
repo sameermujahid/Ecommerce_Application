@@ -1,0 +1,5 @@
+# Ignore Django virtual environment
+venv/
+
+# Ignore Node.js dependencies
+react_frontend/node_modules/
