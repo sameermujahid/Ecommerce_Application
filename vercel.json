@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "react_frontend/package.json",
+      "use": "@vercel/static-build"
+    },
+    {
+      "src": "django_backend/your_django_app/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "django_backend/your_django_app/views.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "react_frontend/build/$1"
+    }
+  ]
+}
